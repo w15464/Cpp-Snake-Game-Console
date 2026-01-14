@@ -25,12 +25,12 @@ This is a traditional Snake game where players control a snake to eat fruits and
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/Abhishek-Verma0/Cpp-Snake-Game-Console.git
+git clone https://github.com/w15464/Cpp-Snake-Game-Console.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd snake-game
+cd Cpp-Snake-Game-Console
 ```
 
 3. Compile the code:
@@ -184,6 +184,3 @@ ANSI escape codes are supported on many modern terminal emulators (including Lin
 - 1	Bold text
 - 4	Underlined text
 - 7	Reverse (invert colors)
-Build/notes updated on WSL by chinadepwang.
-
-Build/notes updated on WSL by chinadepwang.
