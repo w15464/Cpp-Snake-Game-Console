@@ -1,6 +1,10 @@
 #include <iostream>
-#include <conio.h> // Used for console input/output
-#include <windows.h> // For Sleep() function
+#ifdef _WIN32
+#include <conio.h>
+#endif
+#include <thread>
+#include <chrono>
+
 using namespace std;
 
 // Flag to indicate whether the game should end
@@ -190,7 +194,7 @@ void Draw() {
 
 // Handle user input for snake's movement
 void Input() {
-    
+    #ifdef _WIN32
     if (_kbhit()) { // Check if a key was pressed
         switch (_getch()) { // Get the pressed key
         case 'a': // Move left
@@ -212,6 +216,7 @@ void Input() {
         default:
             break;
         }
+ #endif
     }
 }
 
@@ -300,7 +305,8 @@ int main() {
                 Input();                            // Process user input
                 Logic();                            // Update game logic
                 int delay = max(10, 50 - tail_Len); // Adjust speed based on snake length
-                Sleep(delay);                       // Add delay for smooth gameplay
+                std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+                 // Add delay for smooth gameplay
                 // Game over message
                 // Set the background color to red for the "Game Over" message
     }
@@ -315,7 +321,7 @@ int main() {
     cout << "\n\033[48;5;1mGame Over! Final Score: " << score<<" " << "\033[0m"<<endl; // The reset sequence (\033[0m) ensures that the red background won't affect subsequent output   
     }
      
-    Sleep(1000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     system("pause");
         }
         else if(choice==1){
