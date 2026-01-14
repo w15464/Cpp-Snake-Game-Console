@@ -1,0 +1,13 @@
+# Windows / C++ build outputs
+*.exe
+*.obj
+*.o
+a.out
+
+# build dirs
+build/
+cmake-build-*/
+
+# IDE junk
+.vscode/
+.idea/
